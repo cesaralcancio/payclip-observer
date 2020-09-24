@@ -1,0 +1,20 @@
+# Spring configuration
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        concurrency: 4
+        max-concurrency: 4
+        default-requeue-rejected: false
+    template:
+      reply-timeout: 60000
+
+service:
+  slack:
+    hook: https://hooks.slack.com/services/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
